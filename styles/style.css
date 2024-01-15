@@ -1,0 +1,69 @@
+:root {
+    --background-color: #21232a;
+    --text-primary: #f5f6f7;
+    --text-secondary: #cdcdcd;
+    --primary-color: hsl(195, 100%, 50%);
+    --secondary-color: #ff9d00;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-wrap: pretty;
+
+    & h1 {
+        text-align: center;
+        font-size: 48px;
+    }
+
+    & h2 {
+        color: var(--primary-color);
+        line-height: 1;
+        margin-bottom: 0;
+        margin-top: 3rem;
+    }
+
+    a {
+        /* border: 1px solid var(--primary-color); */
+        border-radius: 15px;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        transition: 0.5s ease-in;
+
+        &:hover {
+            outline: 1px solid var(--secondary-color);
+        }
+    }
+}
+
+.flex {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Shape Outside styles */
+.shape-outside {
+    >header {
+        & p {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+    }
+
+    & .content {
+        & .sticker {
+            float: left;
+            height: auto;
+            shape-image-threshold: 70%;
+            shape-margin: 1rem;
+            shape-outside: url("../assets/img/manz-logo.png");
+            width: 150px;
+        }
+    }
+}
